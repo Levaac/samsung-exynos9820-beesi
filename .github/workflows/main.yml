@@ -55,9 +55,10 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Cruel-devel"        \
+                       name="Beesi-apatch-Cruel-devel"        \
                        toolchain=$TOOLCHAIN      \
-                       +magisk=v26.41                   \
+                       -magisk                   \
+                       +apatch                  \
                          +nohardening2                   \
                        +nohardening              \
                        +nodebug             \
