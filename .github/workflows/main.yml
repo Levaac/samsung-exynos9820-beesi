@@ -70,7 +70,7 @@ jobs:
                        +fake_config           \
                        +fp_boost                \
                        +noaudit               \
-                       +morosound                \
+                       +dtb               \
                        +sched_conservative        \
                        +boeffla_wl_blocker       \
           2>&1 | tee config.info
