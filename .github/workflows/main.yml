@@ -35,7 +35,9 @@ jobs:
         run: |
           echo "::set-output name=FULL_DATE::$(date +'%Y-%m-%d')"
           echo "::set-output name=MONTH_DATE::$(date +'%Y-%m')"
-
+           CONFIG_KALLSYMS_ALL=y
+          DEBUG_KERNEL=y
+          CONFIG_KALLSYMS_ALL=n
       - name: Create cache key from ${{ matrix.model }}
         id: ccache_model_key
         run: echo "::set-output name=KEY::$( echo ${{ matrix.model }} | tr ',' '_' )"
@@ -98,6 +100,7 @@ jobs:
           chmod +x mkbootimg.py
           sudo mv mkbootimg.py /usr/local/bin/mkbootimg
           sudo mv gki $(python -c 'import site; print(site.getsitepackages()[0])')
+          CONFIG_KALLSYMS=y
       - name: Install mkdtboimg
         run: |
           wget -q https://android.googlesource.com/platform/system/libufdt/+archive/refs/heads/master.tar.gz -O - | tar --strip-components 2 -xzf - utils/src/mkdtboimg.py
