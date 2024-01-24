@@ -95,7 +95,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                 \
                        model=${{ matrix.model }} \
-                       name="Beesi_kevzoj_Cruel-v5.2-HVE5-KSU"        \
+                       name="Levac"        \
                        toolchain=$TOOLCHAIN      \
                        os_patch_level=2099-12    \
                        +nohardening           \
