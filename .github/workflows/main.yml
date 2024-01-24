@@ -53,7 +53,7 @@ jobs:
       - name: Kernel Configure
         run: |
           set -e -o pipefail
-          ./cruelbuild config                    \
+          ./build config                    \
                        model=${{ matrix.model }} \
                        name="Star7-delta-HWA2-2.1"        \
                        toolchain=$TOOLCHAIN      \
