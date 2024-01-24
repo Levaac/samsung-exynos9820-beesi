@@ -65,7 +65,7 @@ jobs:
                        +cifs                     \
                        +sdfat                    \
                        +ntfs                     \
-                       +fake_config           \
+                       +fake_config          \
                        +fp_boost                \
                        +noaudit               \
                        +dtb                \
