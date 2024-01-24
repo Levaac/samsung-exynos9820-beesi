@@ -92,7 +92,7 @@ jobs:
           set -e -o pipefail
           ./cruelbuild config                    \
                        model=${{ matrix.model }} \
-                       name="Beesi-Cruel-KernelSU"     \
+                       name="Leva"     \
                        toolchain=$TOOLCHAIN      \
                        os_patch_level=2022-04    \
                        -magisk                   \
@@ -110,6 +110,10 @@ jobs:
                        +noaudit \
                        +dtb               \
                        +nohardening2 \
+                       +wireguard \
+                       +boeffla_wl_blocker \
+                       +always_permit \
+                       +performance \
           2>&1 | tee config.info
 
       - name: Install gcc-aarch64-linux-gnu
